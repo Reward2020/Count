@@ -24,7 +24,7 @@ public class ThreadsController implements Runnable {
     public void run() {
 
         try {
-            File linksFile = new File(path + "/src/main/java/org/hillel_Elem/firstapp/resurses/links", Thread.currentThread().getName()+ ".html");
+            File linksFile = new File(path + "\\src\\test\\java\\main\\resources\\links", Thread.currentThread().getName()+ ".html");
             try(BufferedWriter linksFileWriter = new BufferedWriter(new FileWriter(linksFile, true))){
                 Connection.Response html = Jsoup.connect(url).execute();
                 linksFileWriter.write(html.body());

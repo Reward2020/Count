@@ -16,7 +16,6 @@ public class TestMain {
     public static AtomicInteger atomicInteger = new AtomicInteger(0);
 
     public static void main(String[] args) throws IOException {
-
         String mainLink =   "http://websystique.com/";
         List<String> listLink = new ArrayList<>();
 
@@ -34,12 +33,9 @@ public class TestMain {
             }
         }
         for (int i = 0; i< threadQuantity; i++){
-            ThreadsController threadsController = new ThreadsController(listLink.get(i));
+            firstapp.ThreadsController threadsController = new firstapp.ThreadsController(listLink.get(i));
             executor.execute(threadsController);
         }
         executor.shutdown();
-
-
     }
-
 }
